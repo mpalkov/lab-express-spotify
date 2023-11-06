@@ -1,7 +1,12 @@
-<div>
+
+<link rel="stylesheet" href="../styles/style.css">
+<h1 class="header">ALBUMS</h1>
+<section class="list">
     {{#each albumsList}}
-    <h2>ALBUM: {{this.name}}</h2>
-    <img src="{{images.1.url}}" alt="{{name}}">
-    <a href="/tracks/{{this.id}}">VIEW TRACKS</a>
+    <article class="article">
+        <img src="{{images.1.url}}" alt="{{name}}">
+        <h3>{{this.name}}</h3>
+        <a href="/tracks/{{this.id}}" class="btn">VIEW TRACKS</a>
+    </article>
     {{/each}}
-</div>
+</section>
