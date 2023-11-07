@@ -30,6 +30,10 @@ const spotifyApi = new spotifyWebApi({
 
 // Our routes go here:
 
+app.get("/", (req, res) => {
+    res.render("homepage")
+})
+
 app.get("/artist-search", (req, res) => {
     const searchTitle = req.query.searchText;
     spotifyApi
@@ -38,16 +42,15 @@ app.get("/artist-search", (req, res) => {
         .then((data) => {
             //console.log("This is body of our response: ", data.body.artists);
             const artistsList = data.body.artists.items;
-           //console.log(artistsList[3].images[1].url);
+            //console.log(artistsList[3].images[1].url);
             res.render("artist-search-results", {artistsList});
+
+            //  to send the data and view it in the thunderClient for example...
+            //  res.send(artistsList);
         })
         .catch((error) => console.log(error))
     
 });
-
-app.get("/", (req, res) => {
-    res.render("homepage")
-})
 
 app.get('/albums/:artist', (req, res, next) => {
     // .getArtistAlbums() code goes here
