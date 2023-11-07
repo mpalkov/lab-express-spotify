@@ -78,10 +78,10 @@
   }
 
   .track {
-    padding: 0 30px 5px;
+    padding: 0 30px 0x;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     background-color: #f1f3f4;
     margin-bottom: 15px;
   }
